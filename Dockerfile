@@ -8,3 +8,5 @@ RUN apt-get update \
   && apt-get install sudo \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# copy working ph_hba.conf with trust for localhost connection_string
+COPY pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
